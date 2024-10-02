@@ -1,50 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>51 Game - Mines Hack </title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" user-scalable=no"/>
+
+    <title>51 Game - Mines Hack</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-gray-100 relative">
-    <h1 class="text-3xl lg:text-4xl font-bold text-center my-4"  >EARNING GIFT CODE 🎁</h1>
-    <h1 class="text-2xl ">51 Game     </h1>
-    <h1 class="text-6xl lg:text-7xl font-bold mb-8">MINES</h1>
-    <img src="photo_2024-10-01_19-40-19.jpg" alt="" class="w-16 h-16 absolute top-16 left-10">
-    <img src="photo_2024-10-01_19-40-19.jpg" alt="" class="w-16 h-16 absolute top-16 right-10">
-    <div id="grid-container" class="grid grid-cols-5 gap-2 md:gap-4 p-4 bg-gray-800 rounded-lg shadow-lg">
-        <!-- Grid boxes will be created via JavaScript -->
+  </head>
+  <body
+    class="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-gray-100 relative"
+  >
+    <h1 class="text-3xl lg:text-4xl font-bold text-center my-4">
+      EARNING GIFT CODE 🎁
+    </h1>
+    <h1 class="text-2xl">51 Game</h1>
+    <h1 class="text-6xl lg:text-7xl font-bold mb-4">MINES</h1>
+   <a href="https://t.me/earning_gift_code01"> <img
+      src="photo_2024-10-01_19-40-19.jpg"
+      alt=""
+      class="w-16 h-16 mb-4"
+    />
+</a>
+    <div
+      id="grid-container"
+      class="grid grid-cols-5 gap-2 md:gap-4 p-4 bg-gray-800 rounded-lg shadow-lg"
+    >
+      <!-- Grid boxes will be created via JavaScript -->
     </div>
-    <button id="highlight-button" class="mt-8 px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 transition-transform transform hover:scale-105">
-        Check
+    <button
+      id="highlight-button"
+      class="mt-8 px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 transition-transform transform hover:scale-105"
+    >
+      Check
     </button>
-    
-    <div class="flex gap-2"> 
-        <button id="telegram-button" class="mt-4 px-6 py-2 bg-purple-600 text-white font-semibold rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 transition-transform transform hover:scale-105">
-            <a href="https://t.me/earning_gift_code01">Telegram</a>
-        </button>
-        <button id="register-button" class="mt-4 px-6 py-2 bg-purple-600 text-white font-semibold rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 transition-transform transform hover:scale-105">
-            <a href="https://51game9.com/#/register?invitationCode=18688100815">Register</a>
-        </button>
+
+    <div class="flex gap-2">
+      <button
+        id="telegram-button"
+        class="mt-4 px-6 py-2 bg-purple-600 text-white font-semibold rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 transition-transform transform hover:scale-105"
+      >
+        <a href="https://t.me/earning_gift_code01">Telegram</a>
+      </button>
+      <button
+        id="register-button"
+        class="mt-4 px-6 py-2 bg-purple-600 text-white font-semibold rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 transition-transform transform hover:scale-105"
+      >
+        <a href="https://51game9.com/#/register?invitationCode=18688100815"
+          >Register</a
+        >
+      </button>
     </div>
 
     <!-- Popup Modal -->
-    <div id="popup-modal" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex justify-center items-center hidden">
-        <div class="text-purple-600 bg-white p-6 rounded-lg shadow-lg max-w-sm w-full text-center">
-            <h2 class="text-2xl font-bold mb-4">Welcome!</h2>
-            <p class="mb-6">This hack works only for users who create an ID under this link. We use your IP for confirmation, so please register first to play.</p>
-            <div class="flex justify-center items-center gap-2 flex-col">
-                <div class="flex gap-3">   
-                   <a href="https://51game9.com/#/register?invitationCode=18688100815"> <button id="modal-register-button" class="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700">Register</button></a>
-                   <a href="https://t.me/earning_gift_code01"> <button id="modal-telegram-button" class="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700">Telegram</button></a>
-                </div>
-                <div>
-                    <button id="close-button" class="px-6 py-2 bg-gray-300 text-black rounded-lg hover:bg-gray-400">Close</button>
-                </div>
-            </div>
+    <div
+      id="popup-modal"
+      class="fixed inset-0 bg-gray-900 bg-opacity-75 flex justify-center items-center hidden"
+    >
+      <div
+        class="text-purple-600 bg-white p-6 rounded-lg shadow-lg max-w-sm w-full text-center"
+      >
+        <h2 class="text-2xl font-bold mb-4">Welcome!</h2>
+        <p class="mb-6">
+          This hack works only for users who create an ID under this link. We
+          use your IP for confirmation, so please register first to play.
+        </p>
+        <div class="flex justify-center items-center gap-2 flex-col">
+          <div class="flex gap-3">
+            <a href="https://51game9.com/#/register?invitationCode=18688100815">
+              <button
+                id="modal-register-button"
+                class="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700"
+              >
+                Register
+              </button></a
+            >
+            <a href="https://t.me/earning_gift_code01">
+              <button
+                id="modal-telegram-button"
+                class="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700"
+              >
+                Telegram
+              </button></a
+            >
+          </div>
+          <div>
+            <button
+              id="close-button"
+              class="px-6 py-2 bg-gray-300 text-black rounded-lg hover:bg-gray-400"
+            >
+              Close
+            </button>
+          </div>
         </div>
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
