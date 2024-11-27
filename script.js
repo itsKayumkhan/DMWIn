@@ -3,11 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const highlightButton = document.getElementById('highlight-button');
     const popupModal = document.getElementById('popup-modal');
     const closeButton = document.getElementById('close-button');
+    const uidInput = document.getElementById('uid-input');
+    let submitButton;
 
-    // Check if the user has visited before
-    if (!localStorage.getItem('hasVisited')) {
-        popupModal.classList.remove('hidden');
-    }
+    // Display the popup modal
+    popupModal.classList.remove('hidden');
 
     // Handle close button
     closeButton.addEventListener('click', () => {
@@ -27,12 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Highlight boxes when the button is clicked
     highlightButton.addEventListener('click', () => {
-        // Remove previous highlights
         document.querySelectorAll('.highlighted').forEach((box) => {
             box.classList.remove('highlighted', 'scale-110');
-            box.style.boxShadow = ''; // Reset shadow
+            box.style.boxShadow = '';
             const img = box.querySelector('img');
-            if (img) img.remove(); // Remove existing star images
+            if (img) img.remove();
         });
 
         let highlightedIndices = [];
@@ -40,9 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         while (highlightedIndices.length < 4) {
             let randomIndex;
 
-            // Increase the chance of avoiding corner indices
             if (Math.random() < 0.7) {
-                // 70% chance to avoid corners
                 do {
                     randomIndex = Math.floor(Math.random() * 25);
                 } while (cornerIndices.includes(randomIndex));
@@ -55,13 +52,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const box = gridContainer.children[randomIndex];
                 box.classList.add('highlighted', 'scale-110');
-                box.style.boxShadow = '0px 10px 15px 1px yellow'; // Add green glowing shadow
+                box.style.boxShadow = '0px 10px 15px 1px yellow';
 
-                // Add the star image
                 const img = document.createElement('img');
                 img.src = 'star.png';
                 img.alt = 'Star';
-                img.className = 'w-full h-full rounded-sm object-cover'; // Adjust the size as needed
+                img.className = 'w-full h-full rounded-sm object-cover';
                 box.appendChild(img);
             }
         }
@@ -75,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const existingRow = Math.floor(i / 5);
             const existingCol = i % 5;
 
-            // Check if the new index is adjacent (including diagonals) to any existing highlighted box
             if (Math.abs(row - existingRow) <= 1 && Math.abs(col - existingCol) <= 1) {
                 return false;
             }
@@ -83,4 +78,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
         return true;
     }
+
+    // Show submit button when UID is entered
+    uidInput.addEventListener('input', () => {
+        if (!submitButton && uidInput.value.trim()) {
+            submitButton = document.createElement('button');
+            submitButton.textContent = 'Submit';
+            submitButton.className =
+                'px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 mt-3';
+            popupModal.querySelector('.flex.justify-center').appendChild(submitButton);
+
+            // Handle submit button click
+            submitButton.addEventListener('click', () => {
+                popupModal.classList.add('hidden');
+            });
+        } else if (submitButton && !uidInput.value.trim()) {
+            submitButton.remove();
+            submitButton = null;
+        }
+    });
 });
